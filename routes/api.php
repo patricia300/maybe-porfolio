@@ -29,11 +29,11 @@ Route::group(['middleware' => ['auth:sanctum']], function (){
     Route::post('/logout',[ LogoutController::class, 'store']);
     Route::get('/user', [RegisterUserController::class, 'user']);
     Route::post('/new-password', [ NewPasswordController::class, 'store']);
-    Route::post('/forgot-password', [ ForgotPasswordController::class, 'store']);
-    Route::post('/reset-password', [ ResetPasswordController::class, 'store']);
-
 });
 
 Route::post('/register',[ RegisterUserController::class, 'store' ]);
 Route::post('/login',[ LoginController::class, 'store' ]);
+
+Route::post('/forgot-password', [ ForgotPasswordController::class, 'store']);
+Route::post('/reset-password', [ ResetPasswordController::class, 'store']);
 
